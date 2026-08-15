@@ -1,0 +1,357 @@
+:root {
+  --paper: #f7cfce;
+  --ink: #742725;
+  --vermilion: #b93036;
+  --jade: #2d7062;
+  --line: rgba(116, 39, 37, 0.2);
+  --sans: "Be Vietnam Pro", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+  --luna-cursor: url("assets/luna-cursor.png") 25 18;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+
+html, body, a, button { cursor: var(--luna-cursor), auto; }
+
+body {
+  color: var(--ink);
+  background-color: var(--paper);
+  font-family: var(--sans);
+}
+
+html.is-locked,
+html.is-locked body {
+  overflow: hidden;
+}
+
+.is-locked .invite-page,
+.is-locked .skip-link {
+  visibility: hidden;
+}
+
+.password-gate {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  overflow: auto;
+  place-items: center;
+  padding: 1.25rem;
+  background-color: var(--paper);
+  background-image: url("assets/invite-paper-exact-strip.png");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: min(28.9vw, 480px) auto;
+}
+
+.password-gate[hidden] { display: none; }
+
+.password-card {
+  width: min(25rem, 100%);
+  padding: clamp(1.5rem, 5vw, 2.35rem);
+  text-align: center;
+  background: rgba(255, 245, 243, 0.88);
+  border: 2px solid var(--vermilion);
+  border-radius: 1.25rem;
+  box-shadow: 0 1rem 3rem rgba(116, 39, 37, 0.16);
+  backdrop-filter: blur(8px);
+}
+
+.password-card__luna {
+  display: block;
+  width: 5.25rem;
+  height: 5.25rem;
+  margin: 0 auto 0.9rem;
+  object-fit: cover;
+  object-position: center 28%;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0.35rem 1rem rgba(116, 39, 37, 0.18);
+}
+
+.password-card__eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--jade);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.password-card h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(2rem, 8vw, 2.8rem);
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.password-card__hint {
+  max-width: 18rem;
+  margin: 0.85rem auto 1.25rem;
+  color: #805e55;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.password-control {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.5rem;
+}
+
+.password-control input,
+.password-control button {
+  min-height: 3rem;
+  font: inherit;
+  border-radius: 0.65rem;
+}
+
+.password-control input {
+  width: 100%;
+  min-width: 0;
+  padding: 0.75rem 0.9rem;
+  color: var(--ink);
+  background: #fff;
+  border: 2px solid rgba(116, 39, 37, 0.25);
+  outline: 0;
+}
+
+.password-control input:focus {
+  border-color: var(--jade);
+  box-shadow: 0 0 0 3px rgba(45, 112, 98, 0.15);
+}
+
+.password-control input[aria-invalid="true"] {
+  border-color: var(--vermilion);
+}
+
+.password-control button {
+  padding: 0.75rem 1.1rem;
+  color: #fff;
+  background: var(--vermilion);
+  border: 0;
+  font-weight: 800;
+}
+
+.password-control button:hover { background: #9f272d; }
+
+.password-error {
+  min-height: 1.3em;
+  margin: 0.55rem 0 0;
+  color: var(--vermilion);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 10;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.7rem 0.95rem;
+  color: #fff;
+  background: var(--ink);
+  transform: translateY(-180%);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+.invite-page {
+  display: block;
+  width: 100%;
+  min-height: 0;
+  margin: 0 auto;
+}
+
+.invitation {
+  display: grid;
+  overflow: hidden;
+  place-items: center;
+  padding: 0;
+  background-color: var(--paper);
+  background-image: url("assets/invite-paper-exact-strip.png");
+  background-repeat: repeat-x;
+  background-position: top left;
+  background-size: min(28.9vw, 480px) auto;
+  border: 0;
+}
+
+.invitation__art {
+  display: block;
+  width: 100%;
+  max-width: 1661px;
+  height: auto;
+  margin-bottom: -2px;
+  border: 0;
+  clip-path: inset(0 0 2px 0);
+}
+
+.weekend-plan {
+  position: relative;
+  margin-top: -1px;
+  padding: clamp(0.4rem, 0.9vh, 0.7rem) 0 clamp(0.55rem, 1.2vh, 0.9rem);
+  background-color: var(--paper);
+  background-image: url("assets/invite-paper-exact-strip.png");
+  background-repeat: repeat-x;
+  background-position: top left;
+  background-size: min(28.9vw, 480px) auto;
+  border: 0;
+  box-shadow: none;
+}
+
+.invite-page,
+.invitation,
+.weekend-plan,
+.schedule-list {
+  outline: 0;
+  border: 0 !important;
+  box-shadow: none;
+}
+
+.schedule-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: min(760px, calc(100% - 1.5rem));
+  max-width: none;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.schedule-item {
+  display: grid;
+  grid-template-columns: 39px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  gap: 0.18rem 0.48rem;
+  align-items: start;
+  min-width: 0;
+  padding: 0.42rem clamp(0.25rem, 0.45vw, 0.45rem);
+  border: 0 !important;
+  outline: 0;
+  box-shadow: none;
+}
+
+.schedule-item + .schedule-item { border-left: 0 !important; }
+
+.schedule-item::before,
+.schedule-item::after {
+  display: none;
+  content: none;
+}
+
+.schedule-date {
+  position: relative;
+  grid-row: span 2;
+  display: block;
+  width: 39px;
+  height: 45px;
+  margin-top: 0.1rem;
+  color: #fff;
+  background: linear-gradient(to bottom, var(--vermilion) 0 17px, #fff 17px 100%);
+  border: 1px solid rgba(116, 39, 37, 0.62);
+  border-radius: 3px;
+}
+
+.schedule-date::before {
+  position: absolute;
+  z-index: 2;
+  top: -5px;
+  left: 7px;
+  width: 4px;
+  height: 9px;
+  content: "";
+  background: #2e2c2d;
+  border-radius: 99px;
+  box-shadow: 21px 0 #2e2c2d;
+}
+
+.schedule-date::after {
+  position: absolute;
+  inset: 17px 0 auto;
+  content: "";
+  border-top: 1px solid rgba(116, 39, 37, 0.32);
+}
+
+.schedule-date__day, .schedule-date__number {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.schedule-date__day {
+  top: 4px;
+  font-size: 0.43rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.schedule-date__number {
+  top: 19px;
+  margin: 0;
+  color: #302d2d;
+  font-size: 1.22rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.schedule-time {
+  grid-column: 2;
+  align-self: end;
+  margin: 0.12rem 0 0;
+  color: var(--jade);
+  font-size: clamp(0.52rem, 0.62vw, 0.59rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.schedule-copy { grid-column: 2; min-width: 0; }
+
+.schedule-copy h3 {
+  margin: 0;
+  font-size: clamp(0.66rem, 0.82vw, 0.8rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}
+
+.schedule-copy p {
+  margin: 0.22rem 0 0;
+  color: #805e55;
+  font-size: clamp(0.5rem, 0.6vw, 0.58rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 760px) {
+  .invite-page { width: 100%; }
+  .password-control { grid-template-columns: 1fr; }
+  .schedule-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .schedule-item { padding: 0.7rem 0.55rem; }
+  .schedule-item:nth-child(odd) { border-left: 0; }
+  .schedule-item:nth-child(n + 3) { border-top: 0; }
+}

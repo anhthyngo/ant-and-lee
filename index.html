@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" class="is-locked">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Save the date for Anthy and Lee's wedding weekend." />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Anthy &amp; Lee — Save the Date</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,500;0,600;0,700;0,800;1,700&amp;family=Noto+Sans+SC:wght@500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260814-19" />
+    <script src="site-content.js?v=20260814-3" defer></script>
+    <script src="script.js?v=20260814-2" defer></script>
+  </head>
+  <body>
+    <div class="password-gate" id="password-gate" role="dialog" aria-modal="true" aria-labelledby="password-title">
+      <form class="password-card" id="password-form" novalidate>
+        <img class="password-card__luna" src="assets/luna.png" alt="Luna" />
+        <p class="password-card__eyebrow">Anthy &amp; Lee</p>
+        <h1 id="password-title">Welcome</h1>
+        <p class="password-card__hint" id="password-hint">Enter the guest password to view our wedding weekend.</p>
+
+        <label class="visually-hidden" for="guest-password">Guest password</label>
+        <div class="password-control">
+          <input
+            id="guest-password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            autocapitalize="none"
+            spellcheck="false"
+            aria-describedby="password-hint password-error"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Enter</button>
+        </div>
+        <p class="password-error" id="password-error" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <a class="skip-link" href="#weekend-plan">Skip to the weekend schedule</a>
+
+    <main class="invite-page" id="main-content" aria-hidden="true" inert>
+      <section class="invitation" aria-labelledby="invitation-title">
+        <h1 class="visually-hidden" id="invitation-title">Anthy and Lee's wedding invitation</h1>
+        <img
+          class="invitation__art"
+          src="assets/invite-outpainted-v1.png"
+          alt="Illustrated invitation for Anthy and Lee's Memorial Day weekend wedding in Northern Virginia on a wide pink paper backdrop."
+        />
+      </section>
+
+      <section class="weekend-plan" id="weekend-plan" aria-label="Wedding weekend schedule">
+        <ol class="schedule-list" id="schedule-list" aria-label="Wedding weekend schedule"></ol>
+      </section>
+    </main>
+  </body>
+</html>
