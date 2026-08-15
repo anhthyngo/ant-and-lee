@@ -12,8 +12,11 @@
 
 html, body {
   min-width: 320px;
+  width: 100%;
+  height: 100%;
   min-height: 100%;
   margin: 0;
+  overflow: hidden;
 }
 
 html {
@@ -27,7 +30,7 @@ html {
 html, body, a, button { cursor: var(--luna-cursor), auto; }
 
 body {
-  min-height: 100svh;
+  min-height: 0;
   color: var(--ink);
   background: transparent;
   font-family: var(--sans);
@@ -173,15 +176,20 @@ html.is-locked body {
 .skip-link:focus { transform: translateY(0); }
 
 .invite-page {
-  display: block;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) clamp(100px, 12dvh, 124px);
   width: 100%;
-  min-height: 100svh;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
   margin: 0 auto;
+  overflow: hidden;
   background: transparent;
 }
 
 .invitation {
   display: grid;
+  min-height: 0;
   overflow: hidden;
   place-items: center;
   padding: 0;
@@ -192,17 +200,23 @@ html.is-locked body {
 .invitation__art {
   display: block;
   width: 100%;
-  max-width: 1661px;
-  height: auto;
-  margin-bottom: -2px;
+  max-width: none;
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  object-fit: contain;
+  object-position: center;
   border: 0;
-  clip-path: inset(0 0 2px 0);
+  clip-path: none;
 }
 
 .weekend-plan {
   position: relative;
-  margin-top: -1px;
-  padding: clamp(0.4rem, 0.9vh, 0.7rem) 0 clamp(0.55rem, 1.2vh, 0.9rem);
+  display: grid;
+  min-height: 0;
+  margin: 0;
+  padding: clamp(0.25rem, 0.6dvh, 0.45rem) 0;
+  overflow: hidden;
   background: transparent;
   border: 0;
   box-shadow: none;
@@ -220,7 +234,9 @@ html.is-locked body {
 .schedule-list {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
   width: min(760px, calc(100% - 1.5rem));
+  height: 100%;
   max-width: none;
   padding: 0;
   margin: 0 auto;
@@ -232,6 +248,7 @@ html.is-locked body {
   grid-template-columns: 39px minmax(0, 1fr);
   grid-template-rows: auto auto;
   gap: 0.18rem 0.48rem;
+  align-content: center;
   align-items: start;
   min-width: 0;
   padding: 0.42rem clamp(0.25rem, 0.45vw, 0.45rem);
@@ -350,13 +367,14 @@ html.is-locked body {
 }
 
 @media (max-width: 760px) {
-  html { background-size: clamp(167px, 28.4svh, 233px) auto; }
+  html { background-size: clamp(167px, 35svh, 296px) auto; }
 
   .invite-page {
-    display: grid;
-    grid-template-rows: clamp(330px, 56svh, 460px) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) clamp(190px, 38dvh, 260px);
     width: 100%;
-    min-height: 100svh;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
   }
 
   .invitation { min-height: 0; }
@@ -365,6 +383,7 @@ html.is-locked body {
     width: 100%;
     max-width: none;
     height: 100%;
+    max-height: 100%;
     margin: 0;
     object-fit: cover;
     object-position: center;
@@ -372,10 +391,9 @@ html.is-locked body {
   }
 
   .weekend-plan {
-    display: grid;
     min-height: 0;
-    margin-top: 0;
-    padding: 0.35rem 0.3rem max(0.55rem, env(safe-area-inset-bottom));
+    margin: 0;
+    padding: 0.25rem 0.3rem max(0.35rem, env(safe-area-inset-bottom));
   }
 
   .password-control { grid-template-columns: 1fr; }
