@@ -16,11 +16,20 @@ html, body {
   margin: 0;
 }
 
+html {
+  background-color: var(--paper);
+  background-image: url("assets/invite-paper-exact-strip.png");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: min(28.9vw, 480px) auto;
+}
+
 html, body, a, button { cursor: var(--luna-cursor), auto; }
 
 body {
+  min-height: 100svh;
   color: var(--ink);
-  background-color: var(--paper);
+  background: transparent;
   font-family: var(--sans);
 }
 
@@ -166,8 +175,9 @@ html.is-locked body {
 .invite-page {
   display: block;
   width: 100%;
-  min-height: 0;
+  min-height: 100svh;
   margin: 0 auto;
+  background: transparent;
 }
 
 .invitation {
@@ -175,11 +185,7 @@ html.is-locked body {
   overflow: hidden;
   place-items: center;
   padding: 0;
-  background-color: var(--paper);
-  background-image: url("assets/invite-paper-exact-strip.png");
-  background-repeat: repeat-x;
-  background-position: top left;
-  background-size: min(28.9vw, 480px) auto;
+  background: transparent;
   border: 0;
 }
 
@@ -197,11 +203,7 @@ html.is-locked body {
   position: relative;
   margin-top: -1px;
   padding: clamp(0.4rem, 0.9vh, 0.7rem) 0 clamp(0.55rem, 1.2vh, 0.9rem);
-  background-color: var(--paper);
-  background-image: url("assets/invite-paper-exact-strip.png");
-  background-repeat: repeat-x;
-  background-position: top left;
-  background-size: min(28.9vw, 480px) auto;
+  background: transparent;
   border: 0;
   box-shadow: none;
 }
@@ -348,10 +350,52 @@ html.is-locked body {
 }
 
 @media (max-width: 760px) {
-  .invite-page { width: 100%; }
+  html { background-size: clamp(167px, 28.4svh, 233px) auto; }
+
+  .invite-page {
+    display: grid;
+    grid-template-rows: clamp(330px, 56svh, 460px) minmax(0, 1fr);
+    width: 100%;
+    min-height: 100svh;
+  }
+
+  .invitation { min-height: 0; }
+
+  .invitation__art {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+    clip-path: none;
+  }
+
+  .weekend-plan {
+    display: grid;
+    min-height: 0;
+    margin-top: 0;
+    padding: 0.35rem 0.3rem max(0.55rem, env(safe-area-inset-bottom));
+  }
+
   .password-control { grid-template-columns: 1fr; }
-  .schedule-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .schedule-item { padding: 0.7rem 0.55rem; }
+
+  .schedule-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(0, 1fr);
+    gap: 0.2rem 0.3rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  .schedule-item {
+    align-content: center;
+    padding: 0.4rem 0.18rem;
+  }
+
+  .schedule-time { font-size: clamp(0.52rem, 2.7vw, 0.62rem); }
+  .schedule-copy h3 { font-size: clamp(0.65rem, 3vw, 0.78rem); }
+  .schedule-copy p { font-size: clamp(0.5rem, 2.4vw, 0.6rem); }
   .schedule-item:nth-child(odd) { border-left: 0; }
   .schedule-item:nth-child(n + 3) { border-top: 0; }
 }
