@@ -854,3 +854,257 @@ html.is-locked body {
   .schedule-page .schedule-copy h3 { font-size: clamp(0.75rem, 3.3vw, 0.9rem); }
   .schedule-page .schedule-copy .schedule-detail { margin-top: 0.25rem; font-size: 0.62rem; }
 }
+
+/* Main navigation */
+.site-menu {
+  position: absolute;
+  z-index: 30;
+  top: max(1rem, env(safe-area-inset-top));
+  right: max(1rem, env(safe-area-inset-right));
+}
+
+.site-menu__toggle {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.72rem;
+  place-content: center;
+  gap: 0.3rem;
+  color: var(--ink);
+  background: rgba(255, 253, 251, 0.84);
+  border: 1px solid rgba(116, 39, 37, 0.18);
+  border-radius: 50%;
+  box-shadow: 0 0.4rem 1.25rem rgba(116, 39, 37, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.site-menu__toggle > span:not(.visually-hidden) {
+  display: block;
+  width: 1.35rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.site-menu__toggle[aria-expanded="true"] > span:nth-child(1) {
+  transform: translateY(0.4rem) rotate(45deg);
+}
+
+.site-menu__toggle[aria-expanded="true"] > span:nth-child(2) { opacity: 0; }
+
+.site-menu__toggle[aria-expanded="true"] > span:nth-child(3) {
+  transform: translateY(-0.4rem) rotate(-45deg);
+}
+
+.site-menu__panel {
+  position: absolute;
+  top: calc(100% + 0.55rem);
+  right: 0;
+  width: max-content;
+  min-width: 11rem;
+  padding: 0.4rem;
+  background: rgba(255, 253, 251, 0.96);
+  border: 1px solid rgba(116, 39, 37, 0.16);
+  border-radius: 0.85rem;
+  box-shadow: 0 0.8rem 2rem rgba(116, 39, 37, 0.16);
+  backdrop-filter: blur(10px);
+}
+
+.site-menu__panel[hidden] { display: none; }
+
+.site-menu__panel a {
+  display: block;
+  padding: 0.75rem 0.9rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 800;
+  border-radius: 0.55rem;
+}
+
+.site-menu__panel a:hover,
+.site-menu__panel a:focus-visible {
+  color: #fff;
+  background: var(--vermilion);
+  outline: 0;
+}
+
+/* Editorial weekend program */
+.schedule-page .weekend-plan {
+  grid-template-rows: auto minmax(0, 1fr);
+  align-items: stretch;
+  padding: clamp(2rem, 4.2vw, 4.5rem) clamp(2rem, 5.25vw, 5.5rem);
+}
+
+.schedule-heading {
+  align-self: start;
+  width: min(780px, 100%);
+  margin: 0 auto clamp(1rem, 2.3vh, 1.65rem);
+}
+
+.schedule-heading h2 {
+  font-family: "Allura", cursive;
+  font-size: clamp(3.2rem, 5.3vw, 5.6rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.8;
+}
+
+.schedule-page .schedule-list {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  align-self: stretch;
+  gap: 0;
+  width: min(780px, 100%);
+  height: 100%;
+  min-height: 0;
+}
+
+.schedule-page .schedule-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(0.45rem, 1vh, 0.8rem);
+  align-content: center;
+  align-items: start;
+  min-height: 0;
+  padding: clamp(0.85rem, 1.7vh, 1.25rem) 0;
+  background: transparent;
+  border: 0 !important;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.schedule-page .schedule-item + .schedule-item {
+  border-top: 1px solid rgba(185, 48, 54, 0.22) !important;
+}
+
+.schedule-page .schedule-date-label {
+  margin: 0;
+  color: var(--vermilion);
+  font-size: clamp(0.68rem, 0.82vw, 0.8rem);
+  font-weight: 800;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.schedule-page .schedule-copy {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
+.schedule-page .schedule-item:has(.schedule-slot + .schedule-slot) .schedule-copy {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3.5vw, 3.5rem);
+}
+
+.schedule-page .schedule-slot {
+  display: grid;
+  align-content: center;
+  min-width: 0;
+}
+
+.schedule-page .schedule-slot + .schedule-slot {
+  padding: 0;
+  border: 0;
+}
+
+.schedule-page .schedule-time {
+  margin: 0 0 0.15rem;
+  color: var(--jade);
+  font-size: clamp(0.65rem, 0.78vw, 0.76rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.schedule-page .schedule-copy .schedule-event-title {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Allura", cursive;
+  font-size: clamp(2.25rem, 3.7vw, 4.25rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.88;
+}
+
+.schedule-page .schedule-translation {
+  margin: 0.35rem 0 0;
+  color: var(--ink);
+  font-size: clamp(0.66rem, 0.82vw, 0.8rem);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.schedule-page .schedule-copy .schedule-detail {
+  margin: 0.28rem 0 0;
+  color: #80645d;
+  font-size: clamp(0.62rem, 0.74vw, 0.72rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+@media (max-width: 760px) {
+  .site-menu {
+    top: max(0.65rem, env(safe-area-inset-top));
+    right: max(0.65rem, env(safe-area-inset-right));
+  }
+
+  .site-menu__toggle {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+
+  .schedule-page {
+    grid-template-rows: 132px minmax(0, 1fr);
+  }
+
+  .schedule-intro {
+    padding: 2.45rem 1rem 0.8rem;
+  }
+
+  .schedule-intro__eyebrow { font-size: 0.52rem; }
+  .schedule-intro h1 { font-size: clamp(1.75rem, 8.5vw, 2.35rem); }
+  .schedule-intro__copy > p:last-child { font-size: 0.58rem; }
+
+  .schedule-page .weekend-plan {
+    grid-template-rows: auto minmax(0, 1fr);
+    padding: 1.15rem 1.15rem max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .schedule-heading { margin-bottom: 0.45rem; }
+  .schedule-heading p { margin-bottom: 0.08rem; font-size: 0.52rem; }
+  .schedule-heading h2 { font-size: 3rem; }
+
+  .schedule-page .schedule-list {
+    grid-template-rows: repeat(3, auto);
+    height: auto;
+  }
+
+  .schedule-page .schedule-item {
+    gap: 0.35rem;
+    padding: 0.8rem 0;
+  }
+
+  .schedule-page .schedule-date-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.13em;
+  }
+
+  .schedule-page .schedule-item:has(.schedule-slot + .schedule-slot) .schedule-copy {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.7rem;
+  }
+
+  .schedule-page .schedule-slot + .schedule-slot {
+    padding-top: 0.7rem;
+    border-top: 1px solid rgba(185, 48, 54, 0.14);
+  }
+
+  .schedule-page .schedule-time { font-size: 0.55rem; }
+  .schedule-page .schedule-copy .schedule-event-title { font-size: clamp(2rem, 10vw, 2.65rem); }
+  .schedule-page .schedule-translation { margin-top: 0.22rem; font-size: 0.62rem; }
+  .schedule-page .schedule-copy .schedule-detail { margin-top: 0.18rem; font-size: 0.58rem; }
+}

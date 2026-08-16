@@ -127,23 +127,19 @@
 
     items.forEach((item) => {
       const scheduleItem = makeElement("li", "schedule-item");
-      const date = makeElement("div", "schedule-date");
-      const day = makeElement("span", "schedule-date__day", item.day);
-      const dateNumber = makeElement("strong", "schedule-date__number", item.date);
+      const date = makeElement("p", "schedule-date-label", item.dateLabel || `${item.day} ${item.date}`);
       const scheduleCopy = makeElement("div", "schedule-copy");
       const events = Array.isArray(item.events)
         ? item.events
-        : [{ time: item.time, title: item.title, detail: item.detail }];
-
-      date.setAttribute("aria-label", `${item.day} ${item.date}`);
-      date.append(day, dateNumber);
+        : [{ time: item.time, title: item.title, translation: item.translation, detail: item.detail }];
 
       events.forEach((eventItem) => {
         const slot = makeElement("div", "schedule-slot");
         const time = makeElement("p", "schedule-time", eventItem.time);
-        const title = makeElement("h3", "", eventItem.title);
+        const title = makeElement("h3", "schedule-event-title", eventItem.title);
+        const translation = makeElement("p", "schedule-translation", eventItem.translation);
         const detail = makeElement("p", "schedule-detail", eventItem.detail);
-        slot.append(time, title, detail);
+        slot.append(time, title, translation, detail);
         scheduleCopy.append(slot);
       });
 
@@ -154,4 +150,24 @@
 
   setTextContent();
   renderSchedule();
+
+  const menuToggle = document.querySelector(".site-menu__toggle");
+  const menuPanel = document.querySelector("#site-menu-panel");
+
+  if (menuToggle && menuPanel) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      menuPanel.hidden = isOpen;
+    });
+
+    document.addEventListener("click", (event) => {
+      const clickedInsideMenu = event.target instanceof Element && event.target.closest(".site-menu");
+
+      if (!clickedInsideMenu) {
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuPanel.hidden = true;
+      }
+    });
+  }
 })();

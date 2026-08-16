@@ -25,22 +25,27 @@ window.WEDDING_CONTENT = {
       {
         day: "FRI",
         date: "28",
+        dateLabel: "Friday, May 28",
         time: "7:00 PM",
-        title: "Welcome Event · Tiệc Chào Mừng · 歡迎活動",
+        title: "Welcome Event",
+        translation: "Tiệc Chào Mừng · 歡迎活動",
         detail: "Ellie Bird · 125 Founders Ave, Falls Church, VA 22046",
       },
       {
         day: "SAT",
         date: "29",
+        dateLabel: "Saturday, May 29",
         events: [
           {
             time: "9:00 AM",
-            title: "Tea Ceremony · Lễ Đám Hỏi · 敬茶",
+            title: "Tea Ceremony",
+            translation: "Lễ Đám Hỏi · 敬茶",
             detail: "Family only",
           },
           {
             time: "4:00 PM",
-            title: "Celebration · Tiệc Mừng · 慶典",
+            title: "Celebration",
+            translation: "Tiệc Mừng · 慶典",
             detail: "More details to come",
           },
         ],
@@ -48,8 +53,10 @@ window.WEDDING_CONTENT = {
       {
         day: "SUN",
         date: "30",
+        dateLabel: "Sunday, May 30",
         time: "12:00 PM",
-        title: "Pool Party · Tiệc Hồ Bơi · 泳池派對",
+        title: "Pool Party",
+        translation: "Tiệc Hồ Bơi · 泳池派對",
         detail: "More details to come",
       },
     ],
