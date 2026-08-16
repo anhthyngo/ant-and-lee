@@ -42,6 +42,7 @@ html.is-locked body {
 }
 
 .is-locked .invite-page,
+.is-locked .schedule-page,
 .is-locked .skip-link {
   visibility: hidden;
 }
@@ -177,7 +178,7 @@ html.is-locked body {
 
 .invite-page {
   display: grid;
-  grid-template-rows: minmax(0, 1fr) clamp(100px, 12dvh, 124px);
+  grid-template-rows: minmax(0, 1fr);
   width: 100%;
   height: 100vh;
   height: 100dvh;
@@ -196,6 +197,22 @@ html.is-locked body {
   padding: 0;
   background: transparent;
   border: 0;
+}
+
+.invitation-link {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  place-items: center;
+  color: inherit;
+  text-decoration: none;
+  outline-offset: -6px;
+}
+
+.invitation-link:focus-visible {
+  outline: 3px solid var(--jade);
 }
 
 .invitation__art {
@@ -221,6 +238,50 @@ html.is-locked body {
   background: transparent;
   border: 0;
   box-shadow: none;
+}
+
+.schedule-page {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  padding: clamp(0.7rem, 2vw, 1.25rem);
+  overflow: hidden;
+  background: transparent;
+}
+
+.schedule-back {
+  z-index: 1;
+  justify-self: start;
+  padding: 0.55rem 0.8rem;
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: none;
+  background: rgba(255, 245, 243, 0.72);
+  border: 1px solid rgba(116, 39, 37, 0.22);
+  border-radius: 999px;
+}
+
+.schedule-back:hover,
+.schedule-back:focus-visible {
+  color: #fff;
+  background: var(--vermilion);
+  outline: 0;
+}
+
+.schedule-page .weekend-plan {
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.schedule-page .schedule-list {
+  width: min(960px, 100%);
+  height: auto;
 }
 
 .invite-page,
@@ -371,7 +432,7 @@ html.is-locked body {
   html { background-size: clamp(167px, 35svh, 296px) auto; }
 
   .invite-page {
-    grid-template-rows: minmax(0, 1fr) clamp(190px, 38dvh, 260px);
+    grid-template-rows: minmax(0, 1fr);
     width: 100%;
     height: 100vh;
     height: 100dvh;
@@ -395,6 +456,18 @@ html.is-locked body {
     min-height: 0;
     margin: 0;
     padding: 0.25rem 0.3rem max(0.35rem, env(safe-area-inset-bottom));
+  }
+
+  .schedule-page {
+    padding: 0.6rem;
+  }
+
+  .schedule-page .weekend-plan {
+    padding: 0.25rem 0 max(0.35rem, env(safe-area-inset-bottom));
+  }
+
+  .schedule-page .schedule-list {
+    height: 100%;
   }
 
   .password-control { grid-template-columns: 1fr; }

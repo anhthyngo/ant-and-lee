@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Save the date for Anthy and Lee's wedding weekend." />
+    <meta name="description" content="Anthy and Lee's wedding weekend schedule." />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Anthy &amp; Lee — Save the Date</title>
+    <title>Anthy &amp; Lee — Weekend Schedule</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +16,7 @@
     <script src="site-content.js?v=20260814-3" defer></script>
     <script src="script.js?v=20260815-3" defer></script>
   </head>
-  <body>
+  <body data-page="schedule">
     <div class="password-gate" id="password-gate" role="dialog" aria-modal="true" aria-labelledby="password-title">
       <form class="password-card" id="password-form" novalidate>
         <img class="password-card__luna" src="assets/luna.png" alt="Luna" />
@@ -43,17 +43,11 @@
       </form>
     </div>
 
-    <main class="invite-page" id="main-content" aria-hidden="true" inert>
-      <section class="invitation" aria-labelledby="invitation-title">
-        <h1 class="visually-hidden" id="invitation-title">Anthy and Lee's wedding invitation</h1>
-        <a class="invitation-link" href="schedule.html" aria-label="View Anthy and Lee's wedding weekend schedule">
-          <img
-            class="invitation__art"
-            src="assets/invite-outpainted-v1.png"
-            alt="Illustrated invitation for Anthy and Lee's Memorial Day weekend wedding in Northern Virginia on a wide pink paper backdrop."
-          />
-          <span class="visually-hidden">View the wedding weekend schedule</span>
-        </a>
+    <main class="schedule-page" id="main-content" aria-hidden="true" inert>
+      <a class="schedule-back" href="index.html" aria-label="Back to the wedding invitation">← Invitation</a>
+      <section class="weekend-plan" aria-labelledby="schedule-title">
+        <h1 class="visually-hidden" id="schedule-title">Wedding weekend schedule</h1>
+        <ol class="schedule-list" id="schedule-list" aria-label="Wedding weekend schedule"></ol>
       </section>
     </main>
   </body>

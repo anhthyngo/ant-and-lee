@@ -111,7 +111,8 @@
       }
     });
 
-    document.title = `${content.names.one} & ${content.names.two} — Save the Date`;
+    const titleSuffix = document.body.dataset.page === "schedule" ? "Weekend Schedule" : "Save the Date";
+    document.title = `${content.names.one} & ${content.names.two} — ${titleSuffix}`;
   }
 
   function renderSchedule() {
