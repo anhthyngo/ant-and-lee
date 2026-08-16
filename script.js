@@ -131,10 +131,27 @@
       const scheduleCopy = makeElement("div", "schedule-copy");
       const events = Array.isArray(item.events)
         ? item.events
-        : [{ time: item.time, title: item.title, translation: item.translation, detail: item.detail }];
+        : [{
+            time: item.time,
+            title: item.title,
+            translation: item.translation,
+            detail: item.detail,
+            graphic: item.graphic,
+            graphicAlt: item.graphicAlt,
+            graphicClass: item.graphicClass,
+          }];
+
+      scheduleItem.classList.add(events.length > 1 ? "schedule-item--double" : "schedule-item--single");
 
       events.forEach((eventItem) => {
         const slot = makeElement("div", "schedule-slot");
+        if (eventItem.graphic) {
+          const graphic = document.createElement("img");
+          graphic.className = `schedule-graphic${eventItem.graphicClass ? ` ${eventItem.graphicClass}` : ""}`;
+          graphic.src = eventItem.graphic;
+          graphic.alt = eventItem.graphicAlt || "";
+          slot.append(graphic);
+        }
         const time = makeElement("p", "schedule-time", eventItem.time);
         const title = makeElement("h3", "schedule-event-title", eventItem.title);
         const translation = makeElement("p", "schedule-translation", eventItem.translation);
