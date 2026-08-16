@@ -160,7 +160,11 @@
         if (eventItem.titleGraphic) {
           const accessibleTitle = makeElement("span", "visually-hidden", eventItem.title);
           const titleGraphic = document.createElement("img");
-          titleGraphic.className = "schedule-event-title-art";
+          const titleGraphicSlug = eventItem.title
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "");
+          titleGraphic.className = `schedule-event-title-art schedule-event-title-art--${titleGraphicSlug}`;
           titleGraphic.src = eventItem.titleGraphic;
           titleGraphic.alt = "";
           titleGraphic.setAttribute("aria-hidden", "true");

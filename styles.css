@@ -774,12 +774,33 @@ body[data-page="schedule"] .schedule-copy .schedule-event-title {
 
 body[data-page="schedule"] .schedule-event-title-art {
   display: block;
-  width: auto;
+  width: var(--schedule-title-width, 18.2rem);
   max-width: 100%;
-  height: clamp(4rem, 4.4vw, 4.5rem);
+  height: auto;
   max-height: none;
   margin: 0 auto;
   object-fit: contain;
+}
+
+/*
+ * These wordmarks were exported with different canvas heights. Giving them the
+ * same CSS height made the shorter exports look much larger. The widths below
+ * preserve one shared source-pixel scale, using Tea Ceremony as the reference.
+ */
+body[data-page="schedule"] .schedule-event-title-art--welcome-event {
+  --schedule-title-width: clamp(14.3rem, 18vw, 20.4rem);
+}
+
+body[data-page="schedule"] .schedule-event-title-art--tea-ceremony {
+  --schedule-title-width: clamp(12.75rem, 16vw, 18.2rem);
+}
+
+body[data-page="schedule"] .schedule-event-title-art--celebration {
+  --schedule-title-width: clamp(10.4rem, 13vw, 14.9rem);
+}
+
+body[data-page="schedule"] .schedule-event-title-art--pool-party {
+  --schedule-title-width: clamp(9.55rem, 12vw, 13.6rem);
 }
 
 body[data-page="schedule"] .schedule-translation {
@@ -848,7 +869,7 @@ body[data-page="schedule"] .schedule-copy .schedule-detail {
 
   body[data-page="schedule"] .schedule-event-title-art {
     max-width: 100%;
-    height: 3.7rem;
+    height: auto;
   }
 
   body[data-page="schedule"] .schedule-copy .schedule-event-title {
