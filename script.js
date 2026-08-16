@@ -132,7 +132,6 @@
       const events = Array.isArray(item.events)
         ? item.events
         : [{
-            time: item.time,
             daypart: item.daypart,
             title: item.title,
             translation: item.translation,
@@ -157,7 +156,6 @@
         const daypart = eventItem.daypart
           ? makeElement("p", "schedule-daypart", eventItem.daypart)
           : null;
-        const time = makeElement("p", "schedule-time", eventItem.time);
         const title = makeElement("h3", "schedule-event-title");
         if (eventItem.titleGraphic) {
           const accessibleTitle = makeElement("span", "visually-hidden", eventItem.title);
@@ -175,7 +173,7 @@
         if (daypart) {
           slot.append(daypart);
         }
-        slot.append(time, title, translation, detail);
+        slot.append(title, translation, detail);
         scheduleCopy.append(slot);
       });
 

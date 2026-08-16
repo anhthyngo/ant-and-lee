@@ -26,7 +26,7 @@ window.WEDDING_CONTENT = {
         day: "FRI",
         date: "28",
         dateLabel: "Friday, May 28",
-        time: "7:00 PM",
+        daypart: "Evening",
         title: "Welcome Event",
         titleGraphic: "assets/font-headings/welcome-event.png",
         translation: "Tiệc Chào Mừng · 歡迎活動",
@@ -40,7 +40,6 @@ window.WEDDING_CONTENT = {
         dateLabel: "Saturday, May 29",
         events: [
           {
-            time: "9:00 AM",
             daypart: "Morning",
             title: "Tea Ceremony",
             titleGraphic: "assets/font-headings/tea-ceremony.png",
@@ -51,7 +50,6 @@ window.WEDDING_CONTENT = {
             graphicClass: "schedule-graphic--lanterns",
           },
           {
-            time: "4:00 PM",
             daypart: "Evening",
             title: "Celebration",
             titleGraphic: "assets/font-headings/celebration.png",
@@ -67,7 +65,6 @@ window.WEDDING_CONTENT = {
         day: "SUN",
         date: "30",
         dateLabel: "Sunday, May 30",
-        time: "12:00 PM",
         daypart: "Afternoon",
         title: "Pool Party",
         titleGraphic: "assets/font-headings/pool-party.png",
