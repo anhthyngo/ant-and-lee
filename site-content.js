@@ -32,16 +32,18 @@ window.WEDDING_CONTENT = {
       {
         day: "SAT",
         date: "29",
-        time: "9:00 AM",
-        title: "Tea Ceremony · Lễ Đám Hỏi · 敬茶",
-        detail: "Family only",
-      },
-      {
-        day: "SAT",
-        date: "29",
-        time: "4:00 PM",
-        title: "Celebration · Tiệc Mừng · 慶典",
-        detail: "More details to come",
+        events: [
+          {
+            time: "9:00 AM",
+            title: "Tea Ceremony · Lễ Đám Hỏi · 敬茶",
+            detail: "Family only",
+          },
+          {
+            time: "4:00 PM",
+            title: "Celebration · Tiệc Mừng · 慶典",
+            detail: "More details to come",
+          },
+        ],
       },
       {
         day: "SUN",

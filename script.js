@@ -130,15 +130,24 @@
       const date = makeElement("div", "schedule-date");
       const day = makeElement("span", "schedule-date__day", item.day);
       const dateNumber = makeElement("strong", "schedule-date__number", item.date);
-      const time = makeElement("p", "schedule-time", item.time);
       const scheduleCopy = makeElement("div", "schedule-copy");
-      const title = makeElement("h3", "", item.title);
-      const detail = makeElement("p", "", item.detail);
+      const events = Array.isArray(item.events)
+        ? item.events
+        : [{ time: item.time, title: item.title, detail: item.detail }];
 
       date.setAttribute("aria-label", `${item.day} ${item.date}`);
       date.append(day, dateNumber);
-      scheduleCopy.append(title, detail);
-      scheduleItem.append(date, time, scheduleCopy);
+
+      events.forEach((eventItem) => {
+        const slot = makeElement("div", "schedule-slot");
+        const time = makeElement("p", "schedule-time", eventItem.time);
+        const title = makeElement("h3", "", eventItem.title);
+        const detail = makeElement("p", "schedule-detail", eventItem.detail);
+        slot.append(time, title, detail);
+        scheduleCopy.append(slot);
+      });
+
+      scheduleItem.append(date, scheduleCopy);
       list.appendChild(scheduleItem);
     });
   }

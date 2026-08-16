@@ -13,9 +13,9 @@
       href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,500;0,600;0,700;0,800;1,700&amp;family=Noto+Sans+SC:wght@500;700;800&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260815-30" />
-    <script src="site-content.js?v=20260815-4" defer></script>
-    <script src="script.js?v=20260815-3" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260816-31" />
+    <script src="site-content.js?v=20260816-5" defer></script>
+    <script src="script.js?v=20260816-4" defer></script>
   </head>
   <body data-page="schedule">
     <div class="password-gate" id="password-gate" role="dialog" aria-modal="true" aria-labelledby="password-title">
@@ -45,9 +45,19 @@
     </div>
 
     <main class="schedule-page" id="main-content" aria-hidden="true" inert>
-      <a class="schedule-back" href="index.html" aria-label="Back to the wedding invitation">← Invitation</a>
+      <aside class="schedule-intro">
+        <a class="schedule-back" href="index.html" aria-label="Back to the wedding invitation">← Invitation</a>
+        <div class="schedule-intro__copy">
+          <p class="schedule-intro__eyebrow">May 28–30, 2027</p>
+          <h1>Wedding<br />weekend</h1>
+          <p>Anhthy &amp; Lee<br />Northern Virginia</p>
+        </div>
+      </aside>
       <section class="weekend-plan" aria-labelledby="schedule-title">
-        <h1 class="visually-hidden" id="schedule-title">Wedding weekend schedule</h1>
+        <header class="schedule-heading">
+          <p>Save the weekend</p>
+          <h2 id="schedule-title">Schedule</h2>
+        </header>
         <ol class="schedule-list" id="schedule-list" aria-label="Wedding weekend schedule"></ol>
       </section>
     </main>
