@@ -179,6 +179,7 @@ html.is-locked body {
 .skip-link:focus { transform: translateY(0); }
 
 .invite-page {
+  position: relative;
   display: grid;
   grid-template-rows: minmax(0, 1fr);
   width: 100%;
@@ -201,22 +202,6 @@ html.is-locked body {
   border: 0;
 }
 
-.invitation-link {
-  display: grid;
-  width: 100%;
-  height: 100%;
-  min-width: 0;
-  min-height: 0;
-  place-items: center;
-  color: inherit;
-  text-decoration: none;
-  outline-offset: -6px;
-}
-
-.invitation-link:focus-visible {
-  outline: 3px solid var(--jade);
-}
-
 .invitation__art {
   display: block;
   width: auto;
@@ -228,6 +213,32 @@ html.is-locked body {
   object-position: center;
   border: 0;
   clip-path: none;
+}
+
+.schedule-cta {
+  position: absolute;
+  z-index: 2;
+  bottom: max(0.8rem, env(safe-area-inset-bottom));
+  left: 50%;
+  padding: 0.55rem 0.9rem;
+  color: #fff;
+  background: var(--vermilion);
+  border: 2px solid rgba(255, 255, 255, 0.82);
+  border-radius: 999px;
+  box-shadow: 0 0.35rem 1rem rgba(116, 39, 37, 0.2);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-decoration: none;
+  transform: translateX(-50%);
+}
+
+.schedule-cta:hover,
+.schedule-cta:focus-visible {
+  background: #9f272d;
+  outline: 3px solid rgba(45, 112, 98, 0.4);
+  outline-offset: 2px;
 }
 
 .weekend-plan {
