@@ -225,7 +225,7 @@ html.is-locked body {
   object-fit: contain;
   object-position: center;
   border: 0;
-  clip-path: none;
+  clip-path: inset(0 0 3px 0);
 }
 
 .weekend-plan {
@@ -449,7 +449,7 @@ html.is-locked body {
     margin: 0;
     object-fit: contain;
     object-position: center;
-    clip-path: none;
+    clip-path: inset(0 0 3px 0);
   }
 
   .weekend-plan {
