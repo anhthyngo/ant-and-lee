@@ -5,7 +5,7 @@
   --jade: #2d7062;
   --line: rgba(116, 39, 37, 0.2);
   --sans: "Be Vietnam Pro", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
-  --luna-cursor: url("assets/luna-cursor.png") 25 18;
+  --luna-cursor: url("assets/luna-cursor-bordered.svg") 25 18;
 }
 
 * { box-sizing: border-box; }
@@ -22,7 +22,7 @@ html, body {
 html {
   background-color: var(--paper);
   background-image: url("assets/invite-paper-exact-strip.png");
-  background-repeat: repeat-x;
+  background-repeat: repeat;
   background-position: top left;
   background-size: auto 100vh;
   background-size: auto 100dvh;
@@ -47,7 +47,7 @@ body::before {
   pointer-events: none;
   background-color: var(--paper);
   background-image: url("assets/invite-paper-exact-strip.png");
-  background-repeat: repeat-x;
+  background-repeat: repeat;
   background-position: center;
   background-size: auto 100%;
 }
@@ -690,7 +690,7 @@ body[data-page="schedule"] .schedule-item + .schedule-item {
 
 body[data-page="schedule"] .schedule-date-label {
   margin: 0 0 clamp(1.1rem, 2vw, 1.7rem);
-  color: var(--vermilion);
+  color: #c79612;
   font-size: clamp(0.72rem, 1vw, 0.88rem);
   font-weight: 800;
   letter-spacing: 0.18em;
@@ -725,7 +725,7 @@ body[data-page="schedule"] .schedule-graphic {
   width: clamp(5rem, 8vw, 7.2rem);
   height: clamp(4.8rem, 7vw, 6.5rem);
   margin: 0 auto 0.8rem;
-  filter: brightness(0) saturate(100%) invert(37%) sepia(18%) saturate(1324%) hue-rotate(116deg) brightness(91%) contrast(86%);
+  filter: brightness(0) saturate(100%) invert(23%) sepia(47%) saturate(2699%) hue-rotate(330deg) brightness(91%) contrast(88%);
   object-fit: contain;
 }
 
@@ -770,7 +770,7 @@ body[data-page="schedule"] .schedule-event-title-art {
 
 body[data-page="schedule"] .schedule-translation {
   margin: 0.55rem 0 0;
-  color: var(--ink);
+  color: var(--jade);
   font-size: clamp(0.66rem, 0.82vw, 0.78rem);
   font-weight: 700;
   line-height: 1.4;
@@ -1239,7 +1239,7 @@ body[data-page="schedule"] .schedule-copy .schedule-detail {
 
 .schedule-page .schedule-date-label {
   margin: 0;
-  color: var(--vermilion);
+  color: #c79612;
   font-size: clamp(0.68rem, 0.82vw, 0.8rem);
   font-weight: 800;
   letter-spacing: 0.17em;
@@ -1290,7 +1290,7 @@ body[data-page="schedule"] .schedule-copy .schedule-detail {
 
 .schedule-page .schedule-translation {
   margin: 0.35rem 0 0;
-  color: var(--ink);
+  color: var(--jade);
   font-size: clamp(0.66rem, 0.82vw, 0.8rem);
   font-weight: 700;
   line-height: 1.35;

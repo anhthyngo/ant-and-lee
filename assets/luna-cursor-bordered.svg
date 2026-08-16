@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="96" viewBox="0 0 64 96">
+  <defs>
+    <filter id="outline" x="-20%" y="-15%" width="140%" height="130%" color-interpolation-filters="sRGB">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="2" result="expanded"/>
+      <feFlood flood-color="#742725" result="outlineColor"/>
+      <feComposite in="outlineColor" in2="expanded" operator="in" result="outlineShape"/>
+      <feMerge>
+        <feMergeNode in="outlineShape"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <image href="luna-cursor.png" width="64" height="96" filter="url(#outline)"/>
+</svg>
