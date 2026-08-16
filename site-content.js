@@ -33,6 +33,7 @@ window.WEDDING_CONTENT = {
         detail: "Ellie Bird · 125 Founders Ave, Falls Church, VA 22046",
         graphic: "assets/Greece_13.png",
         graphicAlt: "Two illustrated welcome drinks",
+        graphicHref: "https://www.elliebirdva.com/",
       },
       {
         day: "SAT",

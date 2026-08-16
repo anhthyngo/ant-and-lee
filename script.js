@@ -77,7 +77,7 @@
       }
 
       passwordInput.setAttribute("aria-invalid", "true");
-      passwordError.textContent = "That password isn’t correct. Please try again.";
+      passwordError.textContent = "Bork! That password isn't correct. Are you sure you were invited?";
       passwordInput.select();
     });
   }
@@ -137,6 +137,7 @@
             translation: item.translation,
             detail: item.detail,
             graphic: item.graphic,
+            graphicHref: item.graphicHref,
             graphicAlt: item.graphicAlt,
             graphicClass: item.graphicClass,
             titleGraphic: item.titleGraphic,
@@ -151,7 +152,18 @@
           graphic.className = `schedule-graphic${eventItem.graphicClass ? ` ${eventItem.graphicClass}` : ""}`;
           graphic.src = eventItem.graphic;
           graphic.alt = eventItem.graphicAlt || "";
-          slot.append(graphic);
+          if (eventItem.graphicHref) {
+            const graphicLink = document.createElement("a");
+            graphicLink.className = "schedule-graphic-link";
+            graphicLink.href = eventItem.graphicHref;
+            graphicLink.target = "_blank";
+            graphicLink.rel = "noopener noreferrer";
+            graphicLink.setAttribute("aria-label", "Visit the Ellie Bird website");
+            graphicLink.append(graphic);
+            slot.append(graphicLink);
+          } else {
+            slot.append(graphic);
+          }
         }
         const daypart = eventItem.daypart
           ? makeElement("p", "schedule-daypart", eventItem.daypart)

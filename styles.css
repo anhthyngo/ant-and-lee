@@ -99,14 +99,14 @@ html.is-locked body {
 
 .password-card__luna {
   display: block;
-  width: 5.25rem;
-  height: 5.25rem;
+  width: 6.25rem;
+  height: 8rem;
   margin: 0 auto 0.9rem;
-  object-fit: cover;
-  object-position: center 28%;
-  border: 3px solid #fff;
-  border-radius: 50%;
-  box-shadow: 0 0.35rem 1rem rgba(116, 39, 37, 0.18);
+  object-fit: contain;
+  object-position: center;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .password-card__eyebrow {
@@ -762,9 +762,10 @@ body[data-page="schedule"] .schedule-daypart {
 
 body[data-page="schedule"] .schedule-copy .schedule-event-title {
   display: grid;
-  min-height: clamp(4rem, 4.4vw, 4.5rem);
+  height: clamp(4rem, 4.4vw, 4.5rem);
+  min-height: 0;
   margin: 0;
-  place-items: center;
+  place-items: end center;
   color: var(--ink);
   font-family: "Allura", cursive;
   font-size: clamp(2.7rem, 4.5vw, 4.75rem);
@@ -780,6 +781,15 @@ body[data-page="schedule"] .schedule-event-title-art {
   max-height: none;
   margin: 0 auto;
   object-fit: contain;
+  object-position: center bottom;
+  align-self: end;
+}
+
+body[data-page="schedule"] .schedule-graphic-link {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  color: inherit;
 }
 
 /*
@@ -873,7 +883,8 @@ body[data-page="schedule"] .schedule-copy .schedule-detail {
   }
 
   body[data-page="schedule"] .schedule-copy .schedule-event-title {
-    min-height: 3.7rem;
+    height: 3.7rem;
+    min-height: 0;
   }
 }
 
