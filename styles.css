@@ -294,10 +294,10 @@ html.is-locked body {
 
 .schedule-page .schedule-list {
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: repeat(4, minmax(0, 1fr));
-  gap: clamp(0.35rem, 0.8dvh, 0.65rem);
-  width: min(640px, 100%);
-  height: min(78dvh, 760px);
+  grid-template-rows: repeat(4, auto);
+  gap: clamp(0.5rem, 1.2dvh, 0.8rem);
+  width: min(680px, 100%);
+  height: auto;
 }
 
 .schedule-page .schedule-item {
@@ -528,8 +528,9 @@ html.is-locked body {
 
   .schedule-page .schedule-list {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: repeat(4, minmax(0, 1fr));
-    height: 100%;
+    grid-template-rows: repeat(4, auto);
+    gap: 0.45rem;
+    height: auto;
   }
 
   .password-control { grid-template-columns: 1fr; }
