@@ -139,6 +139,7 @@
             graphic: item.graphic,
             graphicAlt: item.graphicAlt,
             graphicClass: item.graphicClass,
+            titleGraphic: item.titleGraphic,
           }];
 
       scheduleItem.classList.add(events.length > 1 ? "schedule-item--double" : "schedule-item--single");
@@ -153,7 +154,18 @@
           slot.append(graphic);
         }
         const time = makeElement("p", "schedule-time", eventItem.time);
-        const title = makeElement("h3", "schedule-event-title", eventItem.title);
+        const title = makeElement("h3", "schedule-event-title");
+        if (eventItem.titleGraphic) {
+          const accessibleTitle = makeElement("span", "visually-hidden", eventItem.title);
+          const titleGraphic = document.createElement("img");
+          titleGraphic.className = "schedule-event-title-art";
+          titleGraphic.src = eventItem.titleGraphic;
+          titleGraphic.alt = "";
+          titleGraphic.setAttribute("aria-hidden", "true");
+          title.append(accessibleTitle, titleGraphic);
+        } else {
+          title.textContent = eventItem.title;
+        }
         const translation = makeElement("p", "schedule-translation", eventItem.translation);
         const detail = makeElement("p", "schedule-detail", eventItem.detail);
         slot.append(time, title, translation, detail);
