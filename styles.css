@@ -31,10 +31,25 @@ html {
 html, body, a, button { cursor: var(--luna-cursor), auto; }
 
 body {
+  position: relative;
+  isolation: isolate;
   min-height: 0;
   color: var(--ink);
   background: transparent;
   font-family: var(--sans);
+}
+
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: -2px;
+  content: "";
+  pointer-events: none;
+  background-color: var(--paper);
+  background-image: url("assets/invite-paper-exact-strip.png");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 100%;
 }
 
 html.is-locked,
