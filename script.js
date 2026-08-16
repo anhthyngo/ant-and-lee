@@ -133,6 +133,7 @@
         ? item.events
         : [{
             time: item.time,
+            daypart: item.daypart,
             title: item.title,
             translation: item.translation,
             detail: item.detail,
@@ -153,6 +154,9 @@
           graphic.alt = eventItem.graphicAlt || "";
           slot.append(graphic);
         }
+        const daypart = eventItem.daypart
+          ? makeElement("p", "schedule-daypart", eventItem.daypart)
+          : null;
         const time = makeElement("p", "schedule-time", eventItem.time);
         const title = makeElement("h3", "schedule-event-title");
         if (eventItem.titleGraphic) {
@@ -168,6 +172,9 @@
         }
         const translation = makeElement("p", "schedule-translation", eventItem.translation);
         const detail = makeElement("p", "schedule-detail", eventItem.detail);
+        if (daypart) {
+          slot.append(daypart);
+        }
         slot.append(time, title, translation, detail);
         scheduleCopy.append(slot);
       });

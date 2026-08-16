@@ -41,6 +41,7 @@ window.WEDDING_CONTENT = {
         events: [
           {
             time: "9:00 AM",
+            daypart: "Morning",
             title: "Tea Ceremony",
             titleGraphic: "assets/font-headings/tea-ceremony.png",
             translation: "Lễ Đám Hỏi · 敬茶",
@@ -51,6 +52,7 @@ window.WEDDING_CONTENT = {
           },
           {
             time: "4:00 PM",
+            daypart: "Evening",
             title: "Celebration",
             titleGraphic: "assets/font-headings/celebration.png",
             translation: "Tiệc Mừng · 慶典",
@@ -66,6 +68,7 @@ window.WEDDING_CONTENT = {
         date: "30",
         dateLabel: "Sunday, May 30",
         time: "12:00 PM",
+        daypart: "Afternoon",
         title: "Pool Party",
         titleGraphic: "assets/font-headings/pool-party.png",
         translation: "Tiệc Hồ Bơi · 泳池派對",

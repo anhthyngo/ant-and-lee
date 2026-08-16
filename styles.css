@@ -35,7 +35,12 @@ body {
   isolation: isolate;
   min-height: 0;
   color: var(--ink);
-  background: transparent;
+  background-color: var(--paper);
+  background-image: url("assets/invite-paper-exact-strip.png");
+  background-repeat: repeat;
+  background-position: center top;
+  background-size: auto 100vh;
+  background-size: auto 100dvh;
   font-family: var(--sans);
 }
 
@@ -690,7 +695,7 @@ body[data-page="schedule"] .schedule-item + .schedule-item {
 
 body[data-page="schedule"] .schedule-date-label {
   margin: 0 0 clamp(1.1rem, 2vw, 1.7rem);
-  color: #c79612;
+  color: var(--jade);
   font-size: clamp(0.72rem, 1vw, 0.88rem);
   font-weight: 800;
   letter-spacing: 0.18em;
@@ -743,6 +748,15 @@ body[data-page="schedule"] .schedule-time {
   font-size: clamp(0.67rem, 0.9vw, 0.8rem);
   font-weight: 800;
   letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+body[data-page="schedule"] .schedule-daypart {
+  margin: 0 0 0.2rem;
+  color: #c79612;
+  font-size: clamp(0.62rem, 0.78vw, 0.72rem);
+  font-weight: 800;
+  letter-spacing: 0.17em;
   text-transform: uppercase;
 }
 
@@ -1188,6 +1202,28 @@ body[data-page="schedule"] .schedule-copy .schedule-detail {
   outline: 0;
 }
 
+.site-menu__coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0.9rem;
+  color: rgba(116, 39, 37, 0.62);
+  font-size: 0.82rem;
+  font-weight: 800;
+  border-top: 1px solid rgba(116, 39, 37, 0.1);
+  cursor: var(--luna-cursor), auto;
+  user-select: none;
+}
+
+.site-menu__coming-soon small {
+  color: var(--vermilion);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 /* Editorial weekend program */
 .schedule-page .weekend-plan {
   grid-template-rows: auto minmax(0, 1fr);
@@ -1239,7 +1275,7 @@ body[data-page="schedule"] .schedule-copy .schedule-detail {
 
 .schedule-page .schedule-date-label {
   margin: 0;
-  color: #c79612;
+  color: var(--jade);
   font-size: clamp(0.68rem, 0.82vw, 0.8rem);
   font-weight: 800;
   letter-spacing: 0.17em;
@@ -1275,6 +1311,15 @@ body[data-page="schedule"] .schedule-copy .schedule-detail {
   font-size: clamp(0.65rem, 0.78vw, 0.76rem);
   font-weight: 800;
   letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.schedule-page .schedule-daypart {
+  margin: 0 0 0.16rem;
+  color: #c79612;
+  font-size: clamp(0.62rem, 0.74vw, 0.7rem);
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
