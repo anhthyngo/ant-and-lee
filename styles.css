@@ -492,24 +492,38 @@ html.is-locked body {
 
 @media (max-width: 760px) {
   .invite-page {
-    grid-template-rows: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    align-content: center;
+    row-gap: 0.35rem;
     width: 100%;
     height: 100vh;
     height: 100dvh;
     min-height: 0;
   }
 
-  .invitation { min-height: 0; }
+  .invitation {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 660 / 947;
+    place-self: center;
+  }
 
   .invitation__art {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: 100%;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
     margin: 0;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     clip-path: none;
+  }
+
+  .schedule-cta {
+    position: static;
+    justify-self: center;
+    margin: 0 0 max(0.65rem, env(safe-area-inset-bottom));
+    transform: none;
   }
 
   .weekend-plan {

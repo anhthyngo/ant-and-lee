@@ -7,7 +7,7 @@
 
 window.WEDDING_CONTENT = {
   names: {
-    one: "Ant",
+    one: "Anhthy",
     two: "Lee",
   },
 
