@@ -189,6 +189,7 @@ html.is-locked body {
 
 .invitation {
   display: grid;
+  min-width: 0;
   min-height: 0;
   overflow: hidden;
   place-items: center;
@@ -199,9 +200,9 @@ html.is-locked body {
 
 .invitation__art {
   display: block;
-  width: 100%;
-  max-width: none;
-  height: 100%;
+  width: auto;
+  max-width: 100%;
+  height: auto;
   max-height: 100%;
   margin: 0;
   object-fit: contain;
@@ -380,12 +381,12 @@ html.is-locked body {
   .invitation { min-height: 0; }
 
   .invitation__art {
-    width: 100%;
-    max-width: none;
-    height: 100%;
+    width: auto;
+    max-width: 100%;
+    height: auto;
     max-height: 100%;
     margin: 0;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     clip-path: none;
   }
